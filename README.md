@@ -16,14 +16,26 @@ A partner of your company has requested to build a software application that wil
 A fuel company (FuelX) needs a system to track rate of fuel for clients. It wants to keep track of *CLient location, Client history, Gallons requested, and Company profit margin%.* The software will allow *login and Registration, Registration only needs username and password, After registration the client logs in to complete profile (location, etc), After all fields in the Fuel Quote Form are entered the Pricing Module will calculate total cost, Then the information will be saved in Client Fuel Quote History. 
 
 # Classes:
+Login
+- username: string
+- password: string
+- isValid(): boolean
+- register()
+
 Client
-- location: boolean (in-state or out-of-state)
-- gallonRequest: int
-+ priceCalc() 
+-firstName
+-lastName
 
 Company
 - fuelRate: int
-+ profitMargin()
++ profitMargin(): int
 
 History
+- client
 - orderDate: date
+
+FuelQuote
+- date
+- location: boolean (in-state or out-of-state)
+- gallonRequest: int
++ priceCalc(): int
