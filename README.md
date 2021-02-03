@@ -22,8 +22,8 @@ Client
 + priceCalc() 
 
 Company
--fuelRate: int
-+profitMargin()
+- fuelRate: int
++ profitMargin()
 
-History:
--orderDate: date
+History
+- orderDate: date
