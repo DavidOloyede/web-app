@@ -23,8 +23,8 @@ Login
 - register()
 
 Client
--firstName
--lastName
+- firstName
+- lastName
 
 Company
 - fuelRate: int
