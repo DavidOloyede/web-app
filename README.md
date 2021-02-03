@@ -18,7 +18,7 @@ A fuel company (FuelX) needs a system to track rate of fuel for clients. It want
 # Classes:
 Client
 - location: boolean (in-state or out-of-state)
--gallonRequest: int
+- gallonRequest: int
 + priceCalc() 
 
 Company
