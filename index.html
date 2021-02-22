@@ -2,49 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FuelX</title>
+    <title>FuelX Website</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="navbar">
-        <nav>
-            <ul class="primary-nav">
-                <!--Depending on if we choose to have the current page bolded in the navigation bar, we would change the class on the next li-->
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <!--Its own class due to the design showing it will have a custom sign in button-->
-            <ul class="secondary-nav">
-                <li class="signInButton"><a href="login.html">Sign in</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="logo" href="index.html">Fuel<span>X</span></a>
+            
+            <img id="mobile-cta" class="mobile-menu" src="images/menu.svg" alt="Open Naviagtion">
+           
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Naviagtion">
+                <ul class="primary-nav">
+                    <li class="current"><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Pricing</a></li>
+                </ul>
+
+                <ul class="secondary-nav">
+                    <li><a href="#">Contact</a></li>
+                    <li class="sign-in-cta"><a href="login.html">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    
+
     <section class="hero">
-        <div class="topContainer">
-            <div class="fuelXLogo">
-                <p class="fuelX">Fuel<span>X</span></p>
+        <div class="container">
+            <div class="left-col">
+                <p class="subhead">Fuel Delivered</p>
+                <h1>When And Where You Need It</h1>
+
+                <div class="hero-cta">
+                    <a href="#" class="primary-cta">Become a Member</a>
+                    <a href="#" class="watch-video-cta"> <img src="images/watch.svg" alt="Watch a video">Watch a video
+                    </a>
+                </div>
             </div>
-            <div class="bottomContainer">
-                <p class="getStarted">Get started free</p>
-                <p>*no card needed</p>
+
+            <img src="images/blue-truck.svg" class="hero-img" alt="Blue Truck">
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <ul class="features-list">
+                <li>Unbeatable Prices</li>
+                <li>Best-in-class Fuel Perfoemance</li>
+                <li>Trust Worthy Drivers</li>
+                <li>Secure Service</li>
+                <li>Reliable Delivery</li>
+                <li>Many awesome benefits</li>
+            </ul>
+
+            <img src="images/thumbs-up.jpeg" alt="Man thumbs up truck">
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <ul>
+                <li>
+                    <img src="images/person.jpg" alt="Person">
+
+                    <blockquote>Co-Founder</blockquote>
+                    <cite>- David Oloyede</cite>
+                </li>
+                <li>
+                    <img src="images/person2.jpg" alt="Person">
+
+                    <blockquote>Co-Founder</blockquote>
+                    <cite>- Sergio </cite>
+                </li>
+                <li>
+                    <img src="images/person2.jpg" alt="Person">
+
+                    <blockquote>Co-Founder</blockquote>
+                    <cite>- Jamie</cite>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-left">
+                <h2>Contact</h2>
+
+                <form action="">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+                    <input type="submit" class="send-message-sta" value="Send message">
+                </form>
+            </div>
+
+            <div class="contact-right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.993292789981!2d-95.34442208556517!3d29.719953540784594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640be5a8ebea199%3A0xc9f387eca8247e7!2sUniversity%20of%20Houston!5e0!3m2!1sen!2sus!4v1613859731319!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
-    <section class="bottomNavBar">
-        <nav>
-            <ul class="bottom-nav">
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Private Policy</a></li>
-                <li><a href="#">Documentation</a></li>
-                <li><a href="#">Pricing</a></li>
-            </ul>
-            <ul class="bottom-nav-fuelx">
-                <li class="bottom-fuelx"><a href="index.html">Fuel<span>X</span></a></li>
-            </ul>
-        </nav>
-    </section>
+
+    <script>
+
+        const mobileBtn = document.getElementById('mobile-cta');
+            nav=document.querySelector('nav'); 
+            mobileBtnExit=document.getElementById('mobile-exit')
+
+        mobileBtn.addEventListener('click',()=> {
+            nav.classList.add('menu-btn')
+        })
+        mobileBtnExit.addEventListener('click',()=> {
+            nav.classList.remove('menu-btn')
+        })
+    </script>
 </body>
 </html>
