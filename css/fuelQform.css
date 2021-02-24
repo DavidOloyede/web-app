@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --primary-color: #4299E1;
+}
+
+body {
+  font-family: 'Poppins';
+  margin: 0;
+  background: #EDF2F7;
+}
+
+.navbar {
+  background: #2D3748;
+}
+
+.navbar .container {
+  padding-top: 1em;
+  padding-left: 5em;
+  height: 3em;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+}
+
+.headerFuelQuoteForm {
+  color: #2D3748;
+  text-align: center;
+}
+
+.information {
+  background: white;
+  height: 40em;
+  width: 35em;
+  margin: auto;
+}
+
+.information .address {
+  font-weight: normal;
+}
+
+.information .address .personIcon {
+  width: 8%;
+  float: left;
+  padding-left: 1px;
+}
+
+.information .address .addressHeader {
+  font-weight: none;
+  padding-top: 1.13em;
+  color: gray;
+}
+
+.information .address .userAddress {
+  padding-left: 2em;
+  color: black;
+}
+
+.information .userInput {
+  padding-left: 2em;
+  line-height: 5em;
+  color: gray;
+}
+
+.information .userGallons {
+  float: left;
+}
+
+.information .userGallons .gallonsRequestedInput {
+  float: right;
+  padding-left: 5em;
+  padding-right: 8em;
+}
+
+.information .dateRequested {
+  float: left;
+}
+
+.information .dateRequested .dateRequestedInput {
+  float: right;
+  padding-left: 12em;
+  padding-right: 8em;
+}
+
+.information .pricePrint {
+  float: left;
+}
+
+.information .generatePrice {
+  float: right;
+  padding-left: 12em;
+  padding-right: 11em;
+}
+
+.information .totalAmountPrint {
+  float: left;
+}
+
+.information .totalAmount {
+  float: right;
+  padding-left: 10em;
+  padding-right: 11em;
+}
+
+.saveButton {
+  float: right;
+  margin-top: 2em;
+  margin-right: 13em;
+  background-color: #2D3748;
+  color: white;
+  text-decoration: none;
+  width: 8em;
+  height: 4em;
+  text-align: center;
+  border-radius: 1em;
+  padding-bottom: 1em;
+  cursor: pointer;
+}
+/*# sourceMappingURL=fuelQform.css.map */
