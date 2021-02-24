@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Quote Form</title>
+    <link rel="stylesheet" href="css/fuelQform.css">
+</head>
+<body>
+    <div class= navbar>
+        <div class="container">
+           <a class="logo" href="index.html">Fuel<span>X</span></a> <!-- Insert image her for the logo if we do end up using an image-->
+        </div>
+    </div>
+    <h1 class= headerFuelQuoteForm>Fuel Quote Form</h1>
+
+    <div class="information">
+        <div class="address" >
+            <img id="personIcon" class= "personIcon" src="images/user-icon.svg" alt="personIcon">
+            <h5 class= "addressHeader">Address</h5>
+            <!--here we'd pull the information for the Address, City, State and Zip-->
+            <p class="userAddress" id="useraddress"></p>
+        </div>
+
+        <script>
+            var userAddress= {City: "Houston", State: "Texas", ZipCode: "77004"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+            document.getElementById("useraddress").innerHTML= userAddress.City+ ", "+ userAddress.State+ " "+ userAddress.ZipCode
+        </script>
+
+        <div class="userInput">
+             <form action="">
+                <label class= "userGallons" for="gallonsRequested">
+                    Gallons Requested:
+                    <div class="gallonsRequestedInput">
+                        <input type="text" id="gallonsRequested" name="gallonsRequested">
+                    </div>
+                </label>
+
+                <label class= "dateRequested" for="dateRequested">
+                    Date: 
+                    <div class="dateRequestedInput">
+                    <input type="date" id="dateRequested" name="dateRequested">
+                    </div>
+                </label>
+
+                
+            </form> 
+
+            <form action="">
+                <p class="pricePrint">Price: </p>
+                <p class= "generatePrice" >$XXXX.XX</p> 
+                <p class="totalAmountPrint">Total Amount: </p>
+                <p class= "totalAmount" >$XXXX.XX</p> 
+            </form>
+            
+            <!-- Use later when we can actually generate the data 
+            <script>
+                var generatedFuelPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+                document.getElementById("fuelPrice").innerHTML= generatedFuelPrice.price
+
+                var getTotalPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+                document.getElementById("totalAmount").innerHTML= getTotalPrice.price
+            </script>
+            -->
+
+            <a href="#" class="saveButton">Save</a>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
