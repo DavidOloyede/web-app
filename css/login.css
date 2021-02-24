@@ -10,6 +10,30 @@ body {
   font-family: 'Poppins';
 }
 
+.navbar {
+  background: white;
+  padding: 1em;
+}
+
+.navbar .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 1.2em;
+}
+
+.navbar .logo span {
+  color: var(--primary-color);
+}
+
+.navbar nav {
+  display: none;
+}
+
+.navbar .mobile-menu {
+  cursor: pointer;
+}
+
 .home-logo {
   text-align: center;
   margin-bottom: 0em;
@@ -19,7 +43,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   color: black;
-  font-size: 1.2em;
+  font-size: 3em;
 }
 
 .home-logo .logo span {
@@ -30,20 +54,21 @@ body {
   cursor: pointer;
 }
 
-.loginTopContainer {
+.loginTopContainer, .register-form {
   margin: auto;
   display: block;
   width: 70%;
   border-radius: 1em;
   background: white;
   padding: 1em;
+  text-align: left;
 }
 
-.loginTopContainer input {
+.loginTopContainer input, .register-form input {
   background-color: #EDF2F7;
 }
 
-.loginTopContainer .forgot-pass {
+.loginTopContainer .forgot-pass, .register-form .forgot-pass {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,21 +80,22 @@ body {
       grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 
-.loginTopContainer .forgot-pass .signIn {
+.loginTopContainer .signIn, .register-form .signIn {
   background: #2A4365;
   text-decoration: none;
-  padding: .6em 1.3em;
+  padding: .3em 1.3em;
   font-size: 1.4em;
   border-radius: 5em;
   font-weight: bold;
   display: inline-block;
+  text-align: center;
 }
 
-.loginTopContainer .forgot-pass .signIn a {
+.loginTopContainer .signIn a, .register-form .signIn a {
   color: white;
 }
 
-.loginTopContainer .forgot-pass .signIn:hover {
+.loginTopContainer .signIn:hover, .register-form .signIn:hover {
   background: var(--primary-color);
   color: white;
 }
@@ -90,6 +116,25 @@ section {
 
 .hero {
   text-align: center;
+}
+
+.hero .register {
+  background: #2A4365;
+  text-decoration: none;
+  padding: 0em 1.3em;
+  font-size: 1.4em;
+  border-radius: 5em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.hero .register a {
+  color: white;
+}
+
+.hero .register:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .left-col .subhead {
@@ -310,7 +355,7 @@ nav li a:hover {
     border: 3px solid var(--primary-color);
     font-weight: bold;
     border-radius: 5em;
-    margin-top: -.2em;
+    float: left;
   }
   .navbar nav li.sign-in-cta a:hover {
     background: var(--primary-color);

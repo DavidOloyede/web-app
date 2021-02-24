@@ -10,6 +10,37 @@ body {
     font-family: 'Poppins'; 
 }
 
+.navbar{
+    background: white;
+    padding: 1em ;
+
+    .logo{
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 1.2em;
+        
+        span{
+            color: var(--primary-color);
+        }
+    }
+  
+    nav{
+      display: none;
+    }
+    
+    .container{
+       // display: flex;
+        //place-content: space-between;
+       
+    }
+    
+
+    .mobile-menu{
+        cursor: pointer;
+    }
+}
+
 .home-logo{
     text-align: center;
     margin-bottom: 0em;
@@ -27,13 +58,14 @@ body {
         cursor: pointer;
     }
 }
-.loginTopContainer{
+.loginTopContainer, .register-form{
     margin: auto;
     display: block;
     width: 70%;
     border-radius: 1em;
     background:white;
     padding: 1em;
+    text-align: left;
     
     input{
         background-color:#EDF2F7;
@@ -45,25 +77,25 @@ body {
         margin-left: 2em;
         position: relative;
         grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-        .signIn{
-            a{
-                color: white;
-            }
+    }
+    .signIn{
+        a{
+            color: white;
+        }
         background: #2A4365;
         text-decoration: none;
-        padding: .6em 1.3em;
+        padding: .3em 1.3em;
         font-size: 1.4em;
         border-radius: 5em;
         font-weight: bold;
         display: inline-block;
-
-            &:hover{
-                background: var(--primary-color);
-                color: white;
-
-            }
+        text-align: center;
+        &:hover{
+            background: var(--primary-color);
+            color: white;
         }
     }
+    
 }
 a{
     color: #444444;
@@ -81,6 +113,24 @@ section{
 
 .hero{
     text-align: center;
+    .register{
+        a{
+            color: white;
+        }
+        background: #2A4365;
+        text-decoration: none;
+        padding: 0em 1.3em;
+        font-size: 1.4em;
+        border-radius: 5em;
+        font-weight: bold;
+        display: inline-block;
+
+        &:hover{
+            background: var(--primary-color);
+            color: white;
+
+        }
+    }
 }
 
 .left-col{
@@ -299,8 +349,8 @@ nav{
             border: 3px solid var(--primary-color);
             font-weight: bold;
             border-radius: 5em;
-            margin-top: -.2em;
-
+            float: left;
+            
             &:hover{
                 background: var(--primary-color);
                 color: white;

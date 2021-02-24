@@ -28,7 +28,7 @@ body {
     }
 }
 
-.headerFuelQuoteForm{
+.headerFuelQuoteForm,.header-profile{
     color: #2D3748;
     text-align: center;
 }
@@ -110,7 +110,7 @@ body {
 
 .saveButton{
     float: right;
-    margin-top: 2em;
+    margin-top: -.5em;
     margin-right: 13em;
     background-color: #2D3748;
     color: white;
@@ -118,7 +118,8 @@ body {
     width: 8em;
     height: 4em;
     text-align: center;
-    border-radius: 1em;
+    border-radius: 5em;
     padding-bottom: 1em;
+    line-height: 4.5em;
     cursor: pointer; 
 }
