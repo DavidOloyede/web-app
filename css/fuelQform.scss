@@ -68,10 +68,12 @@ body {
 
         .userGallons{
             float: left;
+            display: flex;
             .gallonsRequestedInput{
                 float: right;
                 padding-left: 5em;
-                padding-right: 8em;
+                // padding-right: 8em;
+                
                 input{
                     background-color:#EDF2F7;
                 }
