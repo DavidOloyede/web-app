@@ -19,16 +19,16 @@
         
         <div class="profile-form">
             <label for="name"><b>Full name</b></label>
-            <input type="text" name="name" required><br>
+            <input type="text" name="name" maxlength="50" minlength="1" required><br>
             
             <label for="add1"><b>Address 1</b></label>
-            <input type="text" name="add1" required><br>
+            <input type="text" name="add1" maxlength="100" minlength="1" required><br>
 
             <label for="add2"><b>Address 2</b></label>
-            <input type="text" name="add2" required><br>
+            <input type="text" name="add2" maxlength="100" minlength="1" required><br>
 
             <label for="city"><b>City</b></label>
-            <input type="text" name="city" required><br>
+            <input type="text" name="city" maxlength="100" minlength="1" required><br>
             
             <label for="state"><b>State</b></label>
             <select name="state">
@@ -86,7 +86,7 @@
             </select><br>
 
             <label for="zip"><b>Zipcode</b></label>
-            <input type="text" name="zip" required><br>
+            <input type="text" name="zip" maxlength="9" minlength="5" required><br>
             
 
         </div>
