@@ -81,7 +81,7 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.profile-form {
+.profile-form, .portal-form {
   margin: auto;
   display: block;
   width: 70%;
@@ -91,8 +91,26 @@ input[type="submit"] {
   text-align: left;
 }
 
-.profile-form input {
-  background-color: #EDF2F7;
+.portal-buttons {
+  background: #2A4365;
+  text-decoration: none;
+  margin-bottom: 2.5em;
+  padding: .3em 1.3em;
+  font-size: 1.4em;
+  border-radius: 5em;
+  font-weight: bold;
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+}
+
+.portal-buttons a {
+  color: white;
+}
+
+.portal-buttons:hover {
+  background: var(--primary-color);
+  color: white;
 }
 
 .saveButton {
