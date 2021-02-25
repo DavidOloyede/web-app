@@ -79,6 +79,10 @@ body {
   padding-right: 8em;
 }
 
+.information .userGallons .gallonsRequestedInput input {
+  background-color: #EDF2F7;
+}
+
 .information .dateRequested {
   float: left;
 }
@@ -87,6 +91,10 @@ body {
   float: right;
   padding-left: 12em;
   padding-right: 8em;
+}
+
+.information .dateRequested .dateRequestedInput input {
+  background-color: #EDF2F7;
 }
 
 .information .pricePrint {
