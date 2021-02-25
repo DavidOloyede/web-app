@@ -106,6 +106,7 @@ input[type="submit"] {
 
 .portal-buttons a {
   color: white;
+  text-decoration: none;
 }
 
 .portal-buttons:hover {

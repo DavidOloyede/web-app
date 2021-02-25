@@ -93,6 +93,7 @@ body {
 
 .loginTopContainer .signIn a, .register-form .signIn a {
   color: white;
+  text-decoration: none;
 }
 
 .loginTopContainer .signIn:hover, .register-form .signIn:hover {
@@ -102,6 +103,7 @@ body {
 
 a {
   color: #444444;
+  text-decoration: none;
 }
 
 ul {
