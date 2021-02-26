@@ -28,11 +28,10 @@
         </script>
 
         <div class="userInput">
-             <form action="">
                 <label class= "userGallons" for="gallonsRequested">
                     Gallons Requested:
                     <div class="gallonsRequestedInput">
-                        <input type="text" id="gallonsRequested" name="gallonsRequested">
+                        <input onkeydown="priceEnter(this);" placeholder="Hit enter for price" type="text" id="gallonsRequested" name="gallonsRequested">
                     </div>
                 </label>
 
@@ -44,15 +43,16 @@
                 </label>
 
                 
-            </form> 
 
-            <form action="">
+
                 <p class="pricePrint">Price: </p>
-                <p class= "generatePrice" >$XXXX.XX</p> 
-                <p class="totalAmountPrint">Total Amount: </p>
-                <p class= "totalAmount" >$XXXX.XX</p> 
-            </form>
-            
+                <p class= "generatePrice" >$10.00</p> 
+            <label for="totalAmountPrice" class= "totalAmountPrice">
+                Total Amount:
+                <div class="displayPrice">
+                <input name="total" id="total" value="">
+            </div>
+            </label>
             <!-- Use later when we can actually generate the data 
             <script>
                 var generatedFuelPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
@@ -62,8 +62,21 @@
                 document.getElementById("totalAmount").innerHTML= getTotalPrice.price
             </script>
             -->
+            <script>
+                function multiply(value){ //function that will get the value from the gallonsRequestedInput. This function will only run if 'enter' key is hit which will trigger priceEnter function
+                    //var value= document.getElementById('gallonsRequested').value;
+                    var value2= value*10;
+                    document.getElementById('total').value= value2;
+                }
 
-            <a href="#" class="saveButton">Save</a>
+                function priceEnter(element){ //function checks if the enter key was hit and then calls the multiply function 
+                    if(event.key== 'Enter')
+                        multiply(element.value);
+                }
+
+            </script>
+
+            <a href="clientPage.html" class="saveButton">Save</a>
         </div>
 
     </div>

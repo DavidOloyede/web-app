@@ -91,6 +91,19 @@ body {
             }
         }
 
+        .totalAmountPrice{
+            float: left;
+            .displayPrice{
+                float: right;
+                padding-left: 8em;
+                padding-right: 8em;
+                input{
+                    background-color:#EDF2F7;
+                }
+            }
+
+        }
+
         .pricePrint{
             float: left;
 
@@ -101,14 +114,11 @@ body {
             padding-right: 11em;
         }
 
-        .totalAmountPrint{
-            float: left;
-        }
 
         .totalAmount{
             float: right;
             padding-left: 10em;
-            padding-right: 11em;
+            padding-right: 10em;
         }
     }
     
@@ -116,7 +126,7 @@ body {
 
 .saveButton{
     float: right;
-    margin-top: -.5em;
+    margin-top: 2em;
     margin-right: 13em;
     background-color: #2D3748;
     color: white;
