@@ -359,6 +359,7 @@ nav li a:hover {
     font-weight: bold;
     border-radius: 5em;
     float: left;
+    margin-left: 50em;
   }
   .navbar nav li.sign-in-cta a:hover {
     background: var(--primary-color);
