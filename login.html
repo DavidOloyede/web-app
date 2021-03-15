@@ -18,7 +18,7 @@
         </div>
     </section>
 
-    <form class="loginTopContainer" action="#" method="POST">
+    <form name="login" class="loginTopContainer">
         <label for="emailAdd"><b>Email address</b></label>
         <input type="email" placeholder="Enter Email Address" name="emailAdd" required><br>
 
@@ -35,12 +35,29 @@
             </div>
         <!--More work needs to be done on the Sign in button-->
         <!-- <input type="submit" class="signIn" value="Sign In"> -->
-        <p class="signIn"><a href="profile.html">Sign In</a></p>
+        <input type="button" onclick="check(this.form)"  class="signIn" value="Sign In"/>
     </form>
     
     <div class="loginMiddle">
         
     </div>
+
+    <script language="javascript">
+        function check(login)
+        {
+            /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
+            if(login.emailAdd.value == "bob@gmail.com" && login.pswd.value == "bob123")
+            {
+                /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
+                window.location = 'profile.html'
+            }
+            else
+            {
+                /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
+                alert("Incorrect username or Password")
+            }
+        }
+    </script>
     
 </body>
 </html>
