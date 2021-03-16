@@ -45,12 +45,13 @@
                 
 
 
-                <p class="pricePrint">Price: </p>
+                <p class="pricePrint">Price/Gallon: </p>
                 <p class= "generatePrice" >$10.00</p> 
             <label for="totalAmountPrice" class= "totalAmountPrice">
                 Total Amount:
                 <div class="displayPrice">
-                <input name="total" id="total" value="">
+                
+                <input style="visibility:hidden" name="total" id="total" value="">
             </div>
             </label>
             <!-- Use later when we can actually generate the data 
@@ -71,6 +72,7 @@
 
                 function priceEnter(element){ //function checks if the enter key was hit and then calls the multiply function 
                     if(event.key== 'Enter')
+                        document.getElementById('total').style.visibility='visible';
                         multiply(element.value);
                 }
 
