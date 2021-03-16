@@ -95,10 +95,11 @@ body {
 
         .totalAmountPrice{
             float: left;
+            display: flex;
             .displayPrice{
                 float: right;
                 padding-left: 8em;
-                padding-right: 8em;
+                // padding-right: 8em;
                 input{
                     background-color:#EDF2F7;
                 }
