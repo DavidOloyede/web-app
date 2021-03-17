@@ -1,47 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RegisterTEST</title>
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
     <div class="navbar">
-        
-            <div class="container">
-                <a class="logo" href="index.html">Fuel<span>X</span></a>
-            <!--Its own class due to the design showing it will have a custom sign in button-->
-            <nav>
-                <ul class="secondary-nav">
-                    
-                    <li class="sign-in-cta"><a href="login.html">Sign in</a></li>
-                </ul>
-            </nav>
-            </div>
-        
+      <div class="cont">
+        <a class="logo" href="index.html">Fuel<span>X</span></a>
+        <!--Its own class due to the design showing it will have a custom sign in button-->
+        <nav>
+          <ul class="secondary-nav">
+            <li class="sign-in-cta"><a href="login.html">Sign in</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <section class="hero">
-        <div class="home-logo">
-            <!--Not sure if we will just use an image file for the logo or it will be in CSS, currently split the fuel and X to apply appropriate CSS-->
-            <div class="logo">Fuel<span>X</span></div>
-        </div>
-        <div class="register-form">
-            <label for="name"><b>Full name</b></label>
-            <input type="text" name="name" required><br>
+    <section class="container">
+      <div class="header">
+        <!--Not sure if we will just use an image file for the logo or it will be in CSS, currently split the fuel and X to apply appropriate CSS-->
+        <div class="logo">Fuel<span>X</span></div>
+      </div>
+      <!-- <div class="register-form">
+        <label for="name"><b>Full name</b></label>
+        <input type="text" name="name" required /><br />
+        <label for="email"><b>Email Address</b></label>
+        <input type="text" name="email" required /><br />
+        <label for="pasw"><b>Password</b></label>
+        <input type="password" name="pasw" required /><br />
+      </div>
+      <div class="register">
+        <p class="registerButton"><a href="login.html">Register</a></p>
+      </div> -->
 
-            <label for="email"><b>Email Address</b></label>
-            <input type="text" name="email" required><br>
-            
-            <label for="pasw"><b>Password</b></label>
-            <input type="password" name="pasw" required><br>
-            
-        </div>
-        <div class="register">
-            <p class="registerButton"><a href="login.html">Register</a></p>
-        </div>
+
+      <!-- <div class="container">
+        <div class="header">
+          <h2>Create Account</h2>
+        </div> -->
+        <form id="form" class="form">
+          <div class="form-control">
+            <label for="username">Name</label>
+            <input type="text" placeholder="bob rob" id="fullName" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="username">Email</label>
+            <input type="email" placeholder="bob@gmail.com" id="email" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+          </div>
+          <div class="form-control">
+            <label for="username">Password</label>
+            <input type="password" placeholder="Password" id="password" />
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+          </div>
+
+          
+        
+        <button class="submit" onclick="check(this.form)">Submit<a href="login.html"></a></button>
        
+      
+        </form>
+      </div>
+
+      <script langauge="javasrcript">
+        const form = document.getElementById("form");
+        const fullName = document.getElementById("fullName");
+        const email = document.getElementById("email");
+        const password = document.getElementById("password");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          checkInputs();
+        });
+
+        function checkInputs() {
+          // trim to remove the whitespaces
+          const fullNameValue = fullName.value.trim();
+          const emailValue = email.value.trim();
+          const passwordValue = password.value.trim();
+
+          if (fullNameValue === "") {
+            setErrorFor(fullName, "Name cannot be blank");
+          } else {
+            setSuccessFor(fullName);
+          }
+
+          if (emailValue === "") {
+            setErrorFor(email, "Email cannot be blank");
+          } else if (!isEmail(emailValue)) {
+            setErrorFor(email, "Not a valid email");
+          } else {
+            setSuccessFor(email);
+          }
+
+          if (passwordValue === "") {
+            setErrorFor(password, "Password cannot be blank");
+          } else {
+            setSuccessFor(password);
+          }
+        }
+
+        function setErrorFor(input, message) {
+          const formControl = input.parentElement;
+          const small = formControl.querySelector("small");
+          formControl.className = "form-control error";
+          small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+          const formControl = input.parentElement;
+          formControl.className = "form-control success";
+        }
+
+        function isEmail(email) {
+          return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+            email
+          );
+        }
+        function check(form) {
+        /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
+        if (
+          form.fullName.value == "bob rob" &&
+          form.password.value == "bob123" && form.email.value == "bob@gmail.com"
+        ) {
+          /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
+          window.location = "login.html";
+        } else {
+          /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
+          alert("All fields must be filled out");
+        }
+      }
+      </script>
     </section>
-</body>
+  </body>
 </html>
