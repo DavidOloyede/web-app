@@ -28,7 +28,7 @@
             name="name"
             maxlength="50"
             minlength="1"
-          
+            placeholder="bob rob"
             id="fullName"
           /><i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -41,7 +41,7 @@
             name="add1"
             maxlength="100"
             minlength="1"
-            
+            placeholder="4800 Calhoun Rd"
             id="address"
           /><i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -49,13 +49,14 @@
 
           
           <label for="add2"><b>Address 2</b></label>
-          <input type="text" name="add2" maxlength="100" minlength="1" /><br />
+          <input type="text" name="add2" placeholder="Optional" maxlength="100" minlength="1" /><br />
 </div>
           <div class="form-control">
             <label for="city"><b>City</b></label>
             <input
               type="text"
               name="city"
+              placeholder="Houston"
               maxlength="100"
               minlength="1"
               id="city"/>
@@ -65,7 +66,7 @@
 </div>
           <div class="form-control">
           <label for="state"><b>State</b></label>
-          <select name="state" id="state"> 
+          <select name="state"  id="state"> 
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -128,7 +129,7 @@
             name="zip"
             maxlength="9"
             minlength="5"
-            
+            placeholder="77004"
             id="zipcode"
           /><i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
@@ -213,14 +214,17 @@
         function check(form) {
           /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
           if (
-            form.fullName.value == "bob rob"
-            
+            form.fullName.value == "bob rob" &&
+            form.address.value == "4800 Calhoun Rd" &&
+            form.city.value == "Houston" &&
+            form.state.value == "TX" &&
+            form.zipcode.value == "77004"
           ) {
             /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
             window.location = "clientPage.html";
           } else {
             /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
-            alert("All fields must be filled out");
+            // alert("All Required Fields Must Be Filled Out");
           }
         }
       </script>

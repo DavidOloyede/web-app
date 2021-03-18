@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RegisterTEST</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css/register.css" />
   </head>
   <body>
@@ -19,11 +19,12 @@
         </nav>
       </div>
     </div>
+
+    <div class="header">
+      <!--Not sure if we will just use an image file for the logo or it will be in CSS, currently split the fuel and X to apply appropriate CSS-->
+      <div class="logo">Fuel<span>X</span></div>
+    </div>
     <section class="container">
-      <div class="header">
-        <!--Not sure if we will just use an image file for the logo or it will be in CSS, currently split the fuel and X to apply appropriate CSS-->
-        <div class="logo">Fuel<span>X</span></div>
-      </div>
       <!-- <div class="register-form">
         <label for="name"><b>Full name</b></label>
         <input type="text" name="name" required /><br />
@@ -36,41 +37,37 @@
         <p class="registerButton"><a href="login.html">Register</a></p>
       </div> -->
 
-
       <!-- <div class="container">
         <div class="header">
           <h2>Create Account</h2>
         </div> -->
-        <form id="form" class="form">
-          <div class="form-control">
-            <label for="username">Name</label>
-            <input type="text" placeholder="bob rob" id="fullName" />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
-          <div class="form-control">
-            <label for="username">Email</label>
-            <input type="email" placeholder="bob@gmail.com" id="email" />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
-          <div class="form-control">
-            <label for="username">Password</label>
-            <input type="password" placeholder="Password" id="password" />
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error message</small>
-          </div>
+      <form id="form" class="form">
+        <div class="form-control">
+          <label for="username">Name</label>
+          <input type="text" placeholder="bob rob" id="fullName" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Email</label>
+          <input type="email" placeholder="bob@gmail.com" id="email" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
+        <div class="form-control">
+          <label for="username">Password</label>
+          <input type="password" placeholder="Password" id="password" />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error message</small>
+        </div>
 
-          
-        
-        <button class="submit" onclick="check(this.form)">Submit<a href="login.html"></a></button>
-       
-      
-        </form>
-      </div>
+        <button class="submit" onclick="check(this.form)">
+          Submit<a href="login.html"></a>
+        </button>
+      </form>
 
       <script langauge="javasrcript">
         const form = document.getElementById("form");
@@ -129,18 +126,19 @@
           );
         }
         function check(form) {
-        /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
-        if (
-          form.fullName.value == "bob rob" &&
-          form.password.value == "bob123" && form.email.value == "bob@gmail.com"
-        ) {
-          /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
-          window.location = "login.html";
-        } else {
-          /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
-          alert("All fields must be filled out");
+          /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
+          if (
+            form.fullName.value == "bob rob" &&
+            form.password.value == "bob123" &&
+            form.email.value == "bob@gmail.com"
+          ) {
+            /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
+            window.location = "login.html";
+          } else {
+            /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
+            // alert("All fields must be filled out");
+          }
         }
-      }
       </script>
     </section>
   </body>
