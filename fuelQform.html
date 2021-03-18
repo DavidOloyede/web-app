@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fuel Quote Form</title>
-    <link rel="stylesheet" href="css/fuelQform.css">
-</head>
-<body>
-    <div class= navbar>
-        <div class="container">
-           <a class="logo" href="index.html">Fuel<span>X</span></a> <!-- Insert image her for the logo if we do end up using an image-->
-        </div>
+    <link rel="stylesheet" href="css/fuelQform.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <a class="logo" href="index.html">Fuel<span>X</span></a>
+        <!-- Insert image her for the logo if we do end up using an image-->
+      </div>
     </div>
-    <h1 class= headerFuelQuoteForm>Fuel Quote Form</h1>
+    <h1 class="headerFuelQuoteForm">Fuel Quote Form</h1>
 
-    <div class="information">
-        <div class="address" >
-            <img id="personIcon" class= "personIcon" src="images/user-icon.svg" alt="personIcon">
-            <h5 class= "addressHeader">Address</h5>
-            <!--here we'd pull the information for the Address, City, State and Zip-->
-            <p class="userAddress" id="useraddress"></p>
-        </div>
+    <section class="information">
+      <addy class="address">
+        <img
+          id="personIcon"
+          class="personIcon"
+          src="images/user-icon.svg"
+          alt="personIcon"
+        />
+        <h5 class="addressHeader">Address</h5>
+        <!--here we'd pull the information for the Address, City, State and Zip-->
+        <p class="userAddress" id="useraddress"></p>
+      </addy>
 
-        <script>
-            var userAddress= {City: "Houston", State: "Texas", ZipCode: "77004"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
-            document.getElementById("useraddress").innerHTML= userAddress.City+ ", "+ userAddress.State+ " "+ userAddress.ZipCode
-        </script>
+      <script>
+        var userAddress = { City: "Houston", State: "Texas", ZipCode: "77004" }; //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+        document.getElementById("useraddress").innerHTML =
+          userAddress.City +
+          ", " +
+          userAddress.State +
+          " " +
+          userAddress.ZipCode;
+      </script>
 
-        <div class="userInput">
-                <label class= "userGallons" for="gallonsRequested">
-                    Gallons Requested:
-                    <div class="gallonsRequestedInput">
-                        <input onkeydown="priceEnter(this);" placeholder="Hit enter for price" type="text" id="gallonsRequested" name="gallonsRequested">
-                    </div>
-                </label>
-
-                <label class= "dateRequested" for="dateRequested">
-                    Date: 
-                    <div class="dateRequestedInput">
-                    <input type="date" id="dateRequested" name="dateRequested">
-                    </div>
-                </label>
-
-                
-
-
-                <p class="pricePrint">Price/Gallon: </p>
-                <p class= "generatePrice" >$10.00</p> 
-            <label for="totalAmountPrice" class= "totalAmountPrice">
-                Total Amount:
-                <div class="displayPrice">
-                
-                <input style="visibility:hidden" name="total" id="total" value="">
+      <!-- QUOTE FORM -->
+      <form id="form" class="form">
+        <ux class="userInput">
+          <label class="userGallons" for="gallonsRequested">
+            Gallons Requested:
+            <div class="gallonsRequestedInput">
+              <input
+                onkeydown="priceEnter(this);"
+                placeholder="Hit enter for price"
+                type="text"
+                id="gallonsRequested"
+                name="gallonsRequested"
+              /><i class="fas fa-check-circle"></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small></small>
             </div>
-            </label>
-            <!-- Use later when we can actually generate the data 
+          </label>
+
+          <label class="dateRequested" for="dateRequested">
+            Date:
+            <div class="dateRequestedInput">
+              <input type="date" id="dateRequested" name="dateRequested" /><i
+                class="fas fa-check-circle"
+              ></i>
+              <i class="fas fa-exclamation-circle"></i>
+              <small></small>
+            </div>
+          </label>
+
+          <p class="pricePrint">Price/Gallon:</p>
+          <p class="generatePrice">$10.00</p>
+          <!-- Just a random price for now -->
+          <label for="totalAmountPrice" class="totalAmountPrice">
+            Total Amount:
+            <div class="displayPrice">
+              <input name="total" id="total" value="" />
+            </div>
+          </label>
+          <!-- Use later when we can actually generate the data 
             <script>
                 var generatedFuelPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
                 document.getElementById("fuelPrice").innerHTML= generatedFuelPrice.price
@@ -63,26 +85,91 @@
                 document.getElementById("totalAmount").innerHTML= getTotalPrice.price
             </script>
             -->
-            <script>
-                function multiply(value){ //function that will get the value from the gallonsRequestedInput. This function will only run if 'enter' key is hit which will trigger priceEnter function
-                    //var value= document.getElementById('gallonsRequested').value;
-                    var value2= value*10;
-                    document.getElementById('total').value= value2;
-                }
+          <script>
+            function multiply(value) {
+              //function that will get the value from the gallonsRequestedInput. This function will only run if 'enter' key is hit which will trigger priceEnter function
+              //var value= document.getElementById('gallonsRequested').value;
+              var value2 = value * 10;
+              document.getElementById("total").value = value2;
+            }
 
-                function priceEnter(element){ //function checks if the enter key was hit and then calls the multiply function 
-                    if(event.key== 'Enter')
-                        document.getElementById('total').style.visibility='visible';
-                        multiply(element.value);
-                }
+            function priceEnter(element) {
+              //function checks if the enter key was hit and then calls the multiply function
+              if (event.key == "Enter") multiply(element.value);
+            }
+          </script>
+          <!-- Use later when we can actually generate the data 
+              <script>
+                  var generatedFuelPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+                  document.getElementById("fuelPrice").innerHTML= generatedFuelPrice.price
+                  var getTotalPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
+                  document.getElementById("totalAmount").innerHTML= getTotalPrice.price
+              </script> -->
 
-            </script>
+          <button class="submit" onclick="check(this.form)">
+            Submit<a href="clientPage.html"></a>
+          </button>
+          <!-- <a href="clientPage.html" class="saveButton">Save</a> -->
+        </ux>
+      </form>
 
-            <a href="clientPage.html" class="saveButton">Save</a>
-        </div>
+      <script langauge="javasrcript">
+        const form = document.getElementById("form");
+        const gallonsRequested = document.getElementById("gallonsRequested");
+        const dateRequested = document.getElementById("dateRequested");
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
 
-    </div>
+          checkInputs();
+        });
 
+        function checkInputs() {
+          // trim to remove the whitespaces
+          const gallonsRequestedValue = gallonsRequested.value.trim();
+          const dateRequestedValue = dateRequested.value.trim();
+          console.log(dateRequestedValue);
 
-</body>
+          if (gallonsRequestedValue === "") {
+            setErrorFor(gallonsRequested, "Number cannot be blank");
+          } else {
+            setSuccessFor(gallonsRequested);
+          }
+
+          if (dateRequestedValue === "") {
+            setErrorFor(dateRequested, "Date cannot be blank");
+          } else if (!Date(dateRequestedValue)) {
+            setErrorFor(dateRequested, "Not a valid dateRequested");
+          } else {
+            setSuccessFor(dateRequested);
+          }
+        }
+
+        function setErrorFor(input, message) {
+          const formControl = input.parentElement;
+          const small = formControl.querySelector("small");
+          formControl.className = "form-control error";
+          small.innerText = message;
+        }
+
+        function setSuccessFor(input) {
+          const formControl = input.parentElement;
+          formControl.className = "form-control success";
+        }
+
+        function check(form) {
+          /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
+          if (
+            form.gallonsRequested.value == 0 ||
+            form.dateRequested.value == 0
+          ) {
+            /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
+          } else {
+            /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
+            // alert("All fields must be filled out");
+            window.location = "clientPage.html";
+          }
+        }
+      </script>
+    </section>
+  </body>
 </html>
