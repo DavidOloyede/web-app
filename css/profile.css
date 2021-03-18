@@ -99,7 +99,7 @@ input[type="submit"] {
   margin: auto;
   display: block;
   width: 70%;
-  border-radius: 1em;
+  border-radius: 0em;
   background: white;
   padding: 1em;
   text-align: left;
