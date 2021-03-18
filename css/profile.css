@@ -79,7 +79,7 @@ textarea {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+/* input[type="submit"] {
   font-weight: bold;
   font-size: 1.3em;
   border: none;
@@ -89,7 +89,7 @@ input[type="submit"] {
   padding: 0.8em 2em;
   width: unset;
   cursor: pointer;
-}
+} */
 
 .form {
   padding: 40px;
