@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --primary-color: #4299e1;
+  --back: #f7fafc;
+}
+
+body {
+  background-color: var(--back);
+  margin: 0;
+  font-family: "Poppins";
+}
+
+.home-logo {
+  text-align: center;
+  margin-bottom: 0em;
+}
+
+.home-logo .logo {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  font-size: 3em;
+}
+
+.home-logo .logo span {
+  color: var(--primary-color);
+}
+
+.home-logo .mobile-menu {
+  cursor: pointer;
+}
+
+.loginTopContainer {
+  margin: auto;
+  display: block;
+  width: 70%;
+  border-radius: 1em;
+  background: white;
+  padding: 1em;
+  text-align: left;
+}
+
+.loginTopContainer input {
+  background-color: #edf2f7;
+}
+
+.loginTopContainer .forgot-pass {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.1em;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  position: relative;
+  -ms-grid-columns: minmax(19rem, 1fr) [auto-fit];
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.loginTopContainer .signIn {
+  background: #2a4365;
+  color: white;
+  text-decoration: none;
+  padding: 0.3em 1.3em;
+  font-size: 1.4em;
+  border-radius: 5em;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+
+.loginTopContainer .signIn a {
+  color: white;
+  text-decoration: none;
+}
+
+.loginTopContainer .signIn:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+a {
+  color: #444444;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  padding: 5em 2em;
+}
+
+label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-bottom: 1em;
+  border-radius: 0.3em;
+  border: 1px solid gray;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  font-weight: bold;
+  font-size: 1.3em;
+  border: none;
+  margin-bottom: 5em;
+  border-radius: 5em;
+  display: inline-block;
+  padding: 0.8em 2em;
+  width: unset;
+  cursor: pointer;
+}
+
+iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.mobile-menu-exit {
+  float: right;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 786px) {
+  .mobile-menu,
+  .mobile-menu-exit {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 1080px;
+    margin: 0 auto;
+  }
+  section {
+    padding: 10em 4em;
+  }
+}
+/*# sourceMappingURL=login.css.map */
