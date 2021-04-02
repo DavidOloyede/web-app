@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<div class="card-wrapper">
+  <div class="navbar">
+    <div class="container">
+      <a class="logo" href="index.html">Fuel<span>X</span></a>
+      <!-- Insert image her for the logo if we do end up using an image-->
+    </div>
+  </div>
+
+  <div class="card">
+    <h1 class="center">My Portal</h1>
+    <p class="center">You are currently logged in.</p>
+
+    <div class="center">
+      <a href="/user/fuelform" class="btn btn--secondary">Fuel Form</a>
+    </div>
+
+    <div class="center">
+      <a href="/user/fuelhistory" class="btn btn--secondary">Fuel History</a>
+    </div>
+
+    <div class="center">
+      <a href="/user/signout" class="btn btn--secondary">Sign Out</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2 class="center">Your Info</h2>
+
+    <p>
+      <strong>ID:</strong> {{ session['user']['_id'] }}<br />
+      <strong>Name:</strong> {{ session['user']['name'] }}<br />
+      <strong>Email:</strong> {{ session['user']['email'] }}<br />
+      <strong>Address:</strong> {{ session['user']['address1']}}<br />
+    </p>
+  </div>
+</div>
+{% endblock %}
