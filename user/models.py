@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, session, redirect
+from flask import Flask, jsonify, request, session, redirect, render_template
 from passlib.hash import pbkdf2_sha256
 from app import db
 import uuid
@@ -18,7 +18,7 @@ class User:
     user = {
       "_id": uuid.uuid4().hex,
       "name": request.form.get('name'),
-      "email": request.form.get('email'),
+      "email": request.form.get('emailAdd'),
       "password": request.form.get('password')
     }
 
@@ -37,6 +37,16 @@ class User:
   def signout(self):
     session.clear()
     return redirect('/')
+
+  def fuelform(self):
+    if "user" in session:
+      user = session["user"]
+    return render_template('fuelQform.html')
+  
+  def fuelhistory(self):
+    if "user" in session:
+      user = session["user"]
+    return render_template('fuelQHistory.html')
   
   def login(self):
 
