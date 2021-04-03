@@ -48,6 +48,12 @@ class User:
       user = session["user"]
     return render_template('fuelQHistory.html')
   
+  def signlog(self):
+    return render_template('login.html')
+
+  def homepage(self):
+    return render_template('index.html')
+
   def login(self):
 
     user = db.users.find_one({
