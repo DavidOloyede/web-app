@@ -1,63 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css">
-</head>
+{% extends "base.html" %}
 
-<body>
-    <section class="home-logo">
-        <div class="container">
-                 <div class="login-center">
-                    <a class="logo" href="index.html">
-                        Fuel<span>X</span>
-                    </a>
-                </div>
-        </div>
-    </section>
+{% block content %}
 
-    <form name="login" class="loginTopContainer">
-        <label for="emailAdd"><b>Email address</b></label>
-        <input type="email" placeholder="Enter Email Address" name="emailAdd" required><br>
+  <div class="card-wrapper">
 
-            
-        <label for="pswd"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="pswd" required><br>
-            <ul class="forgot-pass">
-                <!--Currently have it set to register html page, can change it if we decide to have a diffrent page-->
-                <li><a href="register.html">Forgot Password?</a></li>
-                
-            </ul>
-            <div class="loginBottom">
-                <li><a href="register.html">Don't have an account?</a></li>
-            </div>
-        <!--More work needs to be done on the Sign in button-->
-        <!-- <input type="submit" class="signIn" value="Sign In"> -->
-        <input type="button" onclick="check(this.form)"  class="signIn" value="Sign In"/>
-    </form>
-    
-    <div class="loginMiddle">
-        
+    <div class="card">
+
+      <h1 class="center">Register an Account</h1>
+
+      <form name="signup_form">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" class="field" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" class="field" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="field" required>
+
+        <p class="error error--hidden"></p>
+
+        <input type="submit" value="Sign Up" class="btn">
+      
+      </form>
+      
     </div>
 
-    <script language="javascript">
-        function check(login)
-        {
-            /*CHECKS FOR USER AND PASS - CURRENTLY HARD CODDED VALUES*/
-            if(login.emailAdd.value == "bob@gmail.com" && login.pswd.value == "bob123")
-            {
-                /*WILL OPEN THE FOLLOWING HTML PAGE IF SUCCESSFUL*/
-                window.location = 'profile.html'
-            }
-            else
-            {
-                /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
-                alert("Incorrect username or Password")
-            }
-        }
-    </script>
-    
-</body>
-</html>
+    <div class="card">
+
+      <h1 class="center">Log In</h1>
+
+      <form name="login_form">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" class="field" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="field" required>
+
+        <p class="error error--hidden"></p>
+
+        <input type="submit" value="Log In" class="btn">
+      
+      </form>
+      
+    </div>
+  
+  </div>
+{% endblock %}
