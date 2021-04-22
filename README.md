@@ -10,3 +10,8 @@
 
 > flask run
 
+#UnitTest
+> pip install pytest coverage pytest-co
+
+> pytest --cov=unittest --cov-report=html
+
