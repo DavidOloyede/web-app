@@ -1,6 +1,13 @@
 from flask import Flask, render_template, session, redirect
+import unittest
+import urllib
 from functools import wraps
+import pymongo
 from pymongo import MongoClient
+from flask_pymongo import PyMongo
+#from pprint import pprint
+from passlib.hash import pbkdf2_sha256
+import uuid
 
 app = Flask(__name__)
 app.debug = True
@@ -38,6 +45,7 @@ def home():
 @login_required
 def dashboard():
   return render_template('dashboard.html')
+
 
 if __name__ == "__main__":
   app.run(debug=True)

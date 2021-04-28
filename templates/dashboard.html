@@ -20,6 +20,10 @@
     </div>
 
     <div class="center">
+      <a href="/user/profile" class="btn btn--secondary">My Profile</a>
+    </div>
+
+    <div class="center">
       <a href="/" class="btn btn--secondary">Sign Out</a>
     </div>
   </div>
@@ -31,7 +35,7 @@
       <strong>ID:</strong> {{ session['user']['_id'] }}<br />
       <strong>Welcome </strong> {{ session['user']['name'] }}<br />
       <strong>Email:</strong> {{ session['user']['email'] }}<br />
-      <strong>Address:</strong> {{ session['user']['address1']}}<br />
+      <strong>Address:</strong> {{ session['user']['address']}}<br />
     </p>
   </div>
 </div>
