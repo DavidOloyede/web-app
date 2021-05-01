@@ -4,6 +4,11 @@ from user.models import User
 from app import app
 from app import db
 import pymongo
+#from pymongo import MongoClient
+
+#cluster = MongoClient("mongodb+srv://dbUser:projectx@cluster0.zekyr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+#db = cluster["client"]
+#collection= db["client"]
 
 @app.route('/')
 def homepage():
@@ -20,7 +25,7 @@ def signout():
 @app.route('/user/fuelform')
 def fuelform():
   return User().fuelform()
-  
+
 @app.route('/user/fuelform', methods=['POST'])
 def fillfuelform():
   return User().fillfuelform()
