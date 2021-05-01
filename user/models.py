@@ -9,7 +9,7 @@ class User:
     del user['password']
     session['logged_in'] = True
     session['user'] = user
-    return jsonify(user), 200
+    return redirect('/user/dashboard/')
   
   def signout(self):
     session.clear()
@@ -23,13 +23,6 @@ class User:
   
   def fillfuelform(self):
     print(request.form)
-    # if(request.form.get('gallonsRequested')!=''):
-    #   totalAmountPrice = request.form.get('totalAmountPrice')+ " "+ request.form.get('dateRequested')+" " + request.form.get('gallonsRequested')
-    # elif(request.form.get('gallonsRequested')==''):
-    #   totalAmountPrice = request.form.get('totalAmountPrice')+ " "+ request.form.get('dateRequested')+" " + request.form.get('gallonsRequested')
-    # user= db.users.find_one({
-    #   "_id": session['user']['_id']
-    # })
     return self.fuelform()
   
   def fuelhistory(self):
@@ -56,16 +49,10 @@ class User:
     if user:
       db.users.update({"_id": session['user']['_id']}, {"$set": {"address": address, "state": request.form.get('state')}})
       session['user']['address']= address
+      session['user']['state']=request.form.get('state')
       return redirect('/user/dashboard/')
     else:
       return jsonify({ "error": "Invalid login credentials" }), 401
-
-      # if user:
-      #   db.users.update({"_id": session['user']['_id']}, {"$set": {"gallonsRequested": gallonsRequested, "dateRequested": request.form.get('dateRequested')}})
-      #   session['user']['gallonsRequested']= gallonsRequested
-      #   return redirect('/user/dashboard/')
-      # else:
-      #   return jsonify({ "error": "Invalid login credentials" }), 401
     #if(db.users.update_one({"_id": session['user']['_id']}, {"$set": {"address": address}})):
     #  return self.profile(user)#jsonify({ "message": "Succesful Set Profile Info" }), 200
   
@@ -96,6 +83,7 @@ class User:
         "name": request.form.get('name'),
         "email": request.form.get('emailAdd'),
         "password": request.form.get('password'),
+        "orders": 0
       }
 
       # Encrypt the password
