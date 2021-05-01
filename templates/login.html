@@ -8,7 +8,7 @@
 
       <h1 class="center">Register an Account</h1>
 
-      <form name="signup_form">
+      <form name="signup_form" method="POST">
 
         <label for="name">Name</label>
         <input type="text" name="name" class="field" required>
@@ -21,7 +21,7 @@
 
         <p class="error error--hidden"></p>
 
-        <input type="submit" value="Sign Up" class="btn">
+        <input type="submit" name="signup"value="Sign Up" class="btn">
       
       </form>
       
@@ -31,7 +31,7 @@
 
       <h1 class="center">Log In</h1>
 
-      <form name="login_form" > 
+      <form name="login_form" method="POST"> 
 
         <label for="email">Email</label>
         <input type="email" name="email" class="field" required>
@@ -41,7 +41,7 @@
 
         <p class="error error--hidden"></p>
 
-        <input type="submit" value="Log In" class="btn">
+        <input type="submit" name="login" value="Log In" class="btn">
       
       </form>
       

@@ -30,13 +30,14 @@
 
   <div class="card">
     <h2 class="center">Your Info</h2>
-
+    
     <p>
       <strong>ID:</strong> {{ session['user']['_id'] }}<br />
       <strong>Welcome </strong> {{ session['user']['name'] }}<br />
       <strong>Email:</strong> {{ session['user']['email'] }}<br />
       <strong>Address:</strong> {{ session['user']['address']}}<br />
     </p>
+    
   </div>
 </div>
 {% endblock %}

@@ -28,7 +28,7 @@
         <p class="userAddress" id="useraddress"></p>
       </addy>
 
-      <strong>Address:</strong> {{ session['user']['address1']}}<br />
+      <strong>Address:</strong> {{ session['user']['address']}}<br />
       <!-- <script>
         var userAddress = { City: "Houston", State: "Texas", ZipCode: "77004" }; //hardcoded this information. at some point we'd use this statement to get the info from database or something else
         document.getElementById("useraddress").innerHTML =
@@ -69,7 +69,7 @@
           </label>
 
           <p class="pricePrint">Price/Gallon:</p>
-          <p class="generatePrice">$10.00</p>
+          <p class="generatePrice">$1.695</p>
           <!-- Just a random price for now -->
           <label for="totalAmountPrice" class="totalAmountPrice">
             Total Amount:
@@ -81,6 +81,7 @@
             <script>
                 var generatedFuelPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
                 document.getElementById("fuelPrice").innerHTML= generatedFuelPrice.price
+
                 var getTotalPrice= {price: "$XXXX.XX"} //hardcoded this information. at some point we'd use this statement to get the info from database or something else
                 document.getElementById("totalAmount").innerHTML= getTotalPrice.price
             </script>
@@ -89,7 +90,19 @@
             function multiply(value) {
               //function that will get the value from the gallonsRequestedInput. This function will only run if 'enter' key is hit which will trigger priceEnter function
               //var value= document.getElementById('gallonsRequested').value;
-              var value2 = value * 10;
+              var profit = 0.1;
+              var locFact = 0.02;
+              var rateHist = 0.01;
+
+              if (value <= 1000) {
+                var galfactor = 0.03;
+              } else {
+                var galfactor = 0.02;
+              }
+
+              var margin = 1.5 * (locFact - rateHist + galfactor + profit);
+              var suggestPrice = margin + 1.5;
+              var value2 = value * suggestPrice;
               document.getElementById("total").value = value2;
             }
 
@@ -107,7 +120,7 @@
               </script> -->
 
           <button class="submit" onclick="check(this.form)">
-            Submit<a href="/user/login"></a>
+            Submit<a href="/user/dashboard/"></a>
           </button>
           <!-- <a href="clientPage.html" class="saveButton">Save</a> -->
         </ux>
@@ -166,7 +179,7 @@
           } else {
             /*LOGIN ERROR - CANNOT FIND USERNAME AND PASSWORD COMBINATION*/
             // alert("All fields must be filled out");
-            window.location = "/dashboard/";
+            window.location = "/user/dashboard/";
           }
         }
       </script>
