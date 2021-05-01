@@ -4,7 +4,7 @@ import urllib
 from functools import wraps
 import pymongo
 from pymongo import MongoClient
-from flask_pymongo import PyMongo
+# from flask_pymongo import PyMongo
 #from pprint import pprint
 from passlib.hash import pbkdf2_sha256
 import uuid
@@ -17,6 +17,7 @@ app.secret_key = b'\xcc^\x91\xea\x17-\xd0W\x03\xa7\xf8J0\xac8\xc5'
 cluster = MongoClient("mongodb+srv://dbUser:projectx@cluster0.zekyr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
 db = cluster["client"]
 collection= db["client"]
+#collection.insert_one( {"foo" : "bar" }) #add a document to testdb.testcol
 
 
 # Decorators
@@ -37,11 +38,7 @@ from user import routes
 def index():
   return render_template('index.html')
 
-@app.route('/login/')
-def home():
-  return render_template('login.html')
-
-@app.route('/dashboard/')
+@app.route('/user/dashboard/')
 @login_required
 def dashboard():
   return render_template('dashboard.html')
