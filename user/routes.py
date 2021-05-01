@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 from app import app
 from user.models import User
 from app import app
@@ -29,6 +29,7 @@ def fuelform():
 @app.route('/user/fuelform', methods=['POST'])
 def fillfuelform():
   return User().fillfuelform()
+
 
 @app.route('/user/fuelhistory')
 def fuelhistory():
